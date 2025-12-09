@@ -1,0 +1,161 @@
+/* ========================================= */
+/*                LIGHT MODE                 */
+/* ========================================= */
+body.light {
+  --blue-900: #fff;
+  --blue-700: #f1f4fb;
+  --blue-500: #dbe2f5;
+
+  --accent: #0b3b8c;
+  --text: #1a1a1a;
+
+  background: #f1f1f1 !important;
+  color: #111 !important;
+}
+
+/* GLOBAL */
+body.light .text,
+body.light p,
+body.light span,
+body.light strong,
+body.light a,
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5 {
+  color: #1c1c1c !important;
+}
+
+
+
+/* ========================================= */
+/* TOP-BAR BUTTONS (THEME & LOGOUT)          */
+/* ========================================= */
+.top-btn {
+  padding: 7px 13px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 600;
+}
+
+.top-btn:hover {
+  background: rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+
+
+
+/* ========================================= */
+/* HERO                                      */
+/* ========================================= */
+body.light .hero {
+  background: rgba(255,255,255,0.45) !important;
+  border: 1px solid rgba(0,0,0,0.04) !important;
+}
+
+
+/* ========================================= */
+/* CARD AREA                                 */
+/* ========================================= */
+body.light .card-area {
+  background: rgba(255,255,255,0.35) !important; /* LEBIH TRANSPARAN */
+  border: 1px solid rgba(0,0,0,0.10) !important; /* BORDER DIPERTEBAL */
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 14px;
+}
+
+
+/* ========================================= */
+/* GRID (TRANSPARENT)                         */
+/* ========================================= */
+body.light .card-grid {
+  background: transparent !important;  /* AGAR TIDAK NUTUP PORTAL-CARD */
+  gap: 24px;
+}
+
+
+/* ========================================= */
+/* PORTAL CARD (benar-benar transparan)      */
+/* ========================================= */
+body.light .portal-card {
+  background: rgba(255,255,255,0.40) !important;
+  border: 1px solid rgba(0,0,0,0.08) !important;
+  backdrop-filter: blur(6px);
+  transition: .22s ease;
+  border-radius: 14px;
+}
+
+/* Hover */
+body.light .portal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+body.light .portal-card:hover .pc-icon {
+  transform: scale(1.07);
+}
+
+
+/* ========================================= */
+/* ICON                                      */
+/* ========================================= */
+body.light .pc-icon {
+  background: rgba(255,255,255,0.25) !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  transition: .22s;
+}
+
+
+/* ========================================= */
+/* HEADER + FOOTER                           */
+/* ========================================= */
+body.light .topbar,
+body.light .glass-footer {
+  background: rgba(255,255,255,0.75) !important;
+  border-color: rgba(0,0,0,0.12);
+  color: #222 !important;
+}
+
+
+/* QUICK LINKS – Base (dipakai kedua mode) */
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.quick-links a {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* WARNA KHUSUS LIGHT MODE */
+  background: rgba(0, 0, 0, 0.08);        /* lebih tua */
+  border: 1px solid rgba(0, 0, 0, 0.18);  /* lebih tebal */
+  color: #1a1a1a;
+
+  /* PREMIUM TRANSITION */
+  transition:
+    background 0.28s ease,
+    color 0.28s ease,
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.quick-links a:hover {
+  background: rgba(0, 0, 0, 0.14);       /* lebih gelap saat hover */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}

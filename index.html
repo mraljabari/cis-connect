@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>cis-connect — Corporate Portal</title>
+  <meta name="description" content="cis-connect portal — quick access to company systems" />
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/theme-dark.css">
+  <link rel="stylesheet" href="assets/css/theme-light.css">
+
+</head>
+
+
+<script>
+function toggleTheme() {
+  const body = document.body;
+  const btn = document.querySelector('.top-right button');
+
+  body.classList.toggle('light');
+
+  // ubah ikon
+  const isLight = body.classList.contains('light');
+  btn.textContent = isLight ? '☀️' : '🌙';
+
+  // SIMPAN MODE KE localStorage
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
+// LOAD MODE SAAT PAGE DIBUKA
+document.addEventListener("DOMContentLoaded", function() {
+  const saved = localStorage.getItem('theme');
+  const body = document.body;
+  const btn = document.querySelector('.top-right button');
+
+  if (saved === 'light') {
+    body.classList.add('light');
+    if (btn) btn.textContent = '☀️';
+  } else {
+    if (btn) btn.textContent = '🌙';
+  }
+});
+</script>
+
+
+
+<body>
+
+  <!-- ░░░░░ HEADER GLASS STYLE ░░░░░ -->
+  <header class="topbar">
+    <div class="top-left">
+      <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ01Fl_4jSuxoFbHaBijMRaivKEuqbQe1aWeA&s" class="top-logo"> -->
+      <div class="top-title">CIS-CONNECT</div>
+    </div>
+
+    <div class="top-right">
+  <button class="top-btn theme-toggle" onclick="toggleTheme()">
+    <span class="toggle-icon">🌙</span>
+  </button>
+  <button class="top-btn logout-btn">Logout</button>
+</div>
+
+
+  </header>
+
+  <div class="bg-blob"></div>
+  <div class="bg-blob bg-blob--2"></div>
+
+  <div class="container">
+
+    <main class="hero" role="main">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="assets/logo.png" alt="cis-connect logo" />
+        </div>
+        <div>
+          <h1 class="title">cis-connect</h1>
+          <div class="subtitle">Company Portal • Quick access to internal systems</div>
+        </div>
+      </div>
+
+      <p class="desc">Welcome to <strong>cis-connect</strong> — your single point of access to HRIS, GARIS, Visitor and CRM System, Dashboard System,
+        IT Helpdesk, Tracking System, Website, Mail and other corporate applications. Click a card on the bottom or use the quick shortcuts below.</p>
+
+      <div class="quick-links" role="navigation" aria-label="Quick links">
+        <a href="#" onclick="openLink('https://hris.cisangkan.id/index.php?page=form-login')">HRIS</a>
+        <a href="#" onclick="openLink('https://garis.cisangkan.co.id/')">GARIS</a>
+        <a href="#" onclick="openLink('https://visitor.cisangkan.co.id/pages/form_login.php')">VIS</a>
+        <a href="#" onclick="openLink('https://app.powerbi.com/view?r=eyJrIjoiMmE4Y2U0MzItZTNiMy00NTljLTg2N2EtNzBhNTU3OGQwMGQ0IiwidCI6ImU5NzM4ZGJhLTE5ZTYtNDJiNS04ZDBhLWYxNzQ5YzFmMTRjNSIsImMiOjEwfQ%3D%3D&pageName=ReportSection')">DARIS</a>
+        <a href="#" onclick="openLink('http://ithelp.cisangkan.co.id:10088/')">IT HELPDESK</a>
+        <a href="#" onclick="openLink('http://tracking.cisangkan.co.id/')">TRACKING</a>
+        <a href="#" onclick="openLink('https://cisangkan.id')">WEBSITE</a>
+        <a href="#" onclick="openLink('https://saturnus.webmail.co.id:2096/')">MAIL</a>
+        
+      </div>
+
+      <div class="footer">
+        <!-- <div class="credits">Logged in as <strong>Guest</strong> • <span id="timeNow"></span></div> -->
+      </div>
+    </main>
+
+    <aside class="hero" aria-label="Portal links">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <strong style="font-size:15px">Quick Access</strong>
+        <!-- <small style="opacity:0.9">Move mouse over cards for 3D tilt</small> -->
+      </div>
+
+      <div class="card-grid" id="grid">
+
+        <!-- HRIS -->
+        <a class="portal-card" href="https://hris.cisangkan.id/index.php?page=form-login" data-url="">
+          <div class="pc-top">
+            <div class="pc-icon">
+             
+                <img src="assets/hris.png" alt="" />
+            </div>
+            <div>
+              <div class="pc-title">HRIS</div>
+              <div class="pc-sub">Human Resource Information System</div>
+            </div>
+          </div>
+          <!-- <div class="pc-cta">Open →</div> -->
+        </a>
+        
+
+        <!-- GARIS -->
+        <a class="portal-card" href="https://garis.cisangkan.co.id/" data-url="">
+          <div class="pc-top">
+            <div class="pc-icon">
+             
+                <img src="assets/garis.png" alt="" />
+            </div>
+            <div>
+              <div class="pc-title">GARIS</div>
+              <div class="pc-sub">General Affair Information System</div>
+            </div>
+          </div>
+          <!-- <div class="pc-cta">Open →</div> -->
+        </a>
+
+        <!-- VIS -->
+        <a class="portal-card" href="https://visitor.cisangkan.co.id/pages/form_login.php" data-url="">
+          <div class="pc-top">
+            <div class="pc-icon">
+             
+                <img src="assets/visit.png" alt="" />
+            </div>
+            <div>
+              <div class="pc-title">VIS</div>
+              <div class="pc-sub">Visitor & CRM Information System</div>
+            </div>
+          </div>
+          <!-- <div class="pc-cta">Open →</div> -->
+        </a>
+
+        <!-- DARIS -->
+        <a class="portal-card" href="https://app.powerbi.com/view?r=eyJrIjoiMmE4Y2U0MzItZTNiMy00NTljLTg2N2EtNzBhNTU3OGQwMGQ0IiwidCI6ImU5NzM4ZGJhLTE5ZTYtNDJiNS04ZDBhLWYxNzQ5YzFmMTRjNSIsImMiOjEwfQ%3D%3D&pageName=ReportSection" data-url="">
+          <div class="pc-top">
+            <div class="pc-icon">
+             
+                <img src="assets/dashboard.png" alt="" />
+            </div>
+            <div>
+              <div class="pc-title">DARIS</div>
+              <div class="pc-sub">Dashboard company Information System</div>
+            </div>
+          </div>
+          <!-- <div class="pc-cta">Open →</div> -->
+        </a>
+
+        <!-- Website -->
+        <a class="portal-card" href="http://ithelp.cisangkan.co.id:10088/" data-url="">
+          <div class="pc-top">
+            <div class="pc-icon">
+             
+                <img src="assets/help.png" alt="" />
+            </div>
+            <div>
+              <div class="pc-title">IT Helpdesk</div>
+              <div class="pc-sub">IT Helpdesk of PT Cisangkan</div>
+            </div>
+          </div>
+          <!-- <div class="pc-cta">Open →</div> -->
+        </a>
+
+        <!-- Email -->
+       <a class="portal-card" href="http://tracking.cisangkan.co.id/" data-url="">
+          <div class="pc-top">
+            <div class="pc-icon">
+             
+                <img src="assets/tracking.png" alt="" />
+            </div>
+            <div>
+              <div class="pc-title">Tracking</div>
+              <div class="pc-sub">Tracking Information System </div>
+            </div>
+          </div>
+          <!-- <div class="pc-cta">Open →</div> -->
+        </a>
+        
+        <!-- Website -->
+        <a class="portal-card" href="https://cisangkan.co.id/" data-url="">
+          <div class="pc-top">
+            <div class="pc-icon">
+             
+                <img src="assets/web.png" alt="" />
+            </div>
+            <div>
+              <div class="pc-title">WEB</div>
+              <div class="pc-sub">Website company</div>
+            </div>
+          </div>
+          <!-- <div class="pc-cta">Open →</div> -->
+        </a>
+
+        <!-- Email -->
+       <a class="portal-card" href="https://saturnus.webmail.co.id:2096/" data-url="">
+          <div class="pc-top">
+            <div class="pc-icon">
+             
+                <img src="assets/mail.png" alt="" />
+            </div>
+            <div>
+              <div class="pc-title">MAIL</div>
+              <div class="pc-sub">Email company </div>
+            </div>
+          </div>
+          <!-- <div class="pc-cta">Open →</div> -->
+        </a>
+
+      </div>
+
+
+
+    </aside>
+  </div>
+
+  <!-- ░░░░░ FOOTER GLASS STYLE ░░░░░ -->
+  <footer class="glass-footer">
+    <div>© 2025 CIS-CONNECT. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

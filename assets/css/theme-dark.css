@@ -1,0 +1,154 @@
+/* ========================================= */
+/*               DARK MODE FIX               */
+/* ========================================= */
+
+:root {
+  --blue-900:#0b3b8c;
+  --blue-700:#1660d6;
+  --blue-500:#3b82f6;
+  --accent:#0f4ea8;
+  --muted:#f3f7ff;
+  --text:#eaf3ff;
+}
+
+/* GLOBAL */
+body {
+  background: linear-gradient(180deg, var(--blue-900) 0%, #07275a 60%);
+  color: var(--text);
+  transition: background .25s ease, color .25s ease;
+}
+
+body:not(.light) .text,
+body:not(.light) p,
+body:not(.light) span,
+body:not(.light) strong,
+body:not(.light) a,
+body:not(.light) h1,
+body:not(.light) h2,
+body:not(.light) h3,
+body:not(.light) h4,
+body:not(.light) h5 {
+  color: #ffffff !important;
+}
+
+
+
+/* ========================================= */
+/* TOP-BAR BUTTONS (THEME & LOGOUT)          */
+/* ========================================= */
+body:not(.light) .top-btn {
+  padding: 7px 13px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: 0.25s ease;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+body:not(.light) .top-btn:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-1px);
+}
+
+
+
+/* ========================================= */
+/* HERO                                      */
+/* ========================================= */
+body:not(.light) .hero {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(10px);
+  transition: .25s ease;
+}
+
+
+
+/* ========================================= */
+/* CARD AREA                                 */
+/* ========================================= */
+body:not(.light) .card-area {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 14px;
+  transition: .25s ease;
+}
+
+
+
+/* ========================================= */
+/* GRID                                      */
+/* ========================================= */
+body:not(.light) .card-grid {
+  background: transparent !important;
+  gap: 24px;
+}
+
+
+
+/* ========================================= */
+/* PORTAL CARD                               */
+/* ========================================= */
+body:not(.light) .portal-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  transition: .25s ease;
+}
+
+body:not(.light) .portal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.55);
+}
+
+body:not(.light) .portal-card:hover .pc-icon {
+  transform: scale(1.07);
+}
+
+
+
+/* ========================================= */
+/* ICON                                      */
+/* ========================================= */
+body:not(.light) .pc-icon {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  border-radius: 12px;
+  transition: .25s ease;
+}
+
+
+
+/* ========================================= */
+/* HEADER + FOOTER                           */
+/* ========================================= */
+body:not(.light) .topbar,
+body:not(.light) .glass-footer {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  border-color: rgba(255,255,255,0.12);
+  color: #fff !important;
+  transition: .25s ease;
+}
+
+
+/* QUICK LINKS — DARK MODE */
+body:not(.light) .quick-links a {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.07);
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+body:not(.light) .quick-links a:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.20);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
